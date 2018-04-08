@@ -1,0 +1,13 @@
+.data-editor {
+  height: 21px !important;
+  width: 100% !important;
+  font-size: 14px;
+}
+
+.data-grid {
+  width: 100%;
+}
+
+.cell {
+  height: 22px !important;
+}

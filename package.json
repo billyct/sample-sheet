@@ -12,7 +12,8 @@
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
-    "styled-jsx": "^2.2.6"
+    "styled-jsx": "^2.2.6",
+    "xlsx": "^0.12.8"
   },
   "scripts": {
     "start": "react-app-rewired start",

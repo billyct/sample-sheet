@@ -1,3 +1,6 @@
+import XLSX from 'xlsx';
+import endsWith from 'lodash/endsWith';
+
 export const rowHeaderDefault = [
   { readOnly: true, value: '' },
   { readOnly: true, width: '20%', value: '计算式(m)' },
@@ -33,4 +36,17 @@ export const rowsAddDefault = () => {
   }
 
   return result;
+};
+
+export const exportFile = (data, options = {}) => {
+  /* convert state to workbook */
+  const ws = XLSX.utils.aoa_to_sheet(data);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+  const extension = '.xlsx';
+  let filename = options.filename || 'Sheet';
+  filename =  endsWith(filename, extension) ? filename : `${filename}${extension}`;
+  /* generate XLSX file and send to client */
+  XLSX.writeFile(wb, filename);
 };

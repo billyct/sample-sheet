@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, Button, Input, Row, Col } from 'antd';
+import { Form, Button, Input, Row, Col, Divider } from 'antd';
 import { updateDiameters } from '../actions/diameters';
 
 const { Group } = Input;
@@ -44,6 +44,7 @@ class DiametersSheet extends Component {
     const { diameters } = this.props;
     return (
       <Form>
+        <Divider>直径配置</Divider>
         <Row gutter={10}>
           {diameters.map((diameter, index) => (
             <Col span={4} key={`diameters_${index}`}>
@@ -62,7 +63,7 @@ class DiametersSheet extends Component {
         </Row>
 
         <Item>
-          <Button icon="plus" type="dashed" onClick={this.addDiameter}>增加配置</Button>
+          <Button icon="plus" type="dashed" onClick={this.addDiameter}>增加直径配置</Button>
         </Item>
       </Form>
     );

@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div>
         <Tabs defaultActiveKey="1" tabBarExtraContent={<SheetButtons/>}>
-          <TabPane tab="钢筋翻译表" key="1">
+          <TabPane tab="钢筋翻样表" key="1">
             <SampleSheet/>
           </TabPane>
           <TabPane tab="设置" key="2">

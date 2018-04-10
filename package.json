@@ -2,6 +2,7 @@
   "name": "sample-sheet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://billyct.github.io/sample-sheet",
   "dependencies": {
     "antd": "^3.4.0",
     "lodash": "^4.17.5",
@@ -19,7 +20,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jscsConfig": {
     "preset": "airbnb",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
+    "gh-pages": "^1.1.0",
     "react-app-rewired": "^1.5.0",
     "redux-devtools-extension": "^2.13.2"
   }

@@ -14,17 +14,24 @@ class SampleSheet extends Component {
     const grid = this.props.grid.map(row => [...row]);
     changes.forEach(({ cell, row, col, value }) => {
 
-      if (col === 3) {
-        value = value.toUpperCase();
-      }
-
       if (col === 1) {
+        // 计算式
         try {
           value = value.replace(/[^\d.+\-*/]/g, '');
           eval(value);
         } catch (err) {
           value = 0;
         }
+      }
+
+      if (col === 3) {
+        // 直径
+        value = value.toUpperCase();
+      }
+
+      if (col === 4) {
+        // 根数
+        value = value.replace(/[^\d.]/g, '');
       }
 
       grid[row][col] = {
@@ -36,7 +43,7 @@ class SampleSheet extends Component {
       let diameter = grid[row][3].value;
       let count = grid[row][4].value;
 
-      const lengthFormula = NP.strip(eval(formula));
+      const lengthFormula = NP.strip(eval(formula) || 0);
       grid[row][5] = {
         ...grid[row][5],
         value: lengthFormula,
